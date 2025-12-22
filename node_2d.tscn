@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://bhxlays4w0cq6"]
+
+[ext_resource type="Script" uid="uid://by5ikcemghgn4" path="res://info.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bsg5wl5roujnf" path="res://InfoButton.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://dp7tan7ophevl" path="res://play.gd" id="3_kdubu"]
+[ext_resource type="Texture2D" uid="uid://bg6jmjqeso4p5" path="res://PlayButton.png" id="4_d21ai"]
+[ext_resource type="Texture2D" uid="uid://bafx7d0li5uv2" path="res://info.png" id="5_rj586"]
+[ext_resource type="Script" uid="uid://dibbutt1s7abl" path="res://generatePlayBoard.gd" id="6_kdubu"]
+[ext_resource type="Texture2D" uid="uid://dg8k45ja2kicv" path="res://CreateButton.png" id="7_d21ai"]
+[ext_resource type="Script" uid="uid://npx6bjyejhwh" path="res://create.gd" id="7_rj586"]
+[ext_resource type="Script" uid="uid://dhaagtx2a8yc1" path="res://button.gd" id="9_4d7sh"]
+[ext_resource type="Script" uid="uid://dk27tnx8ic7yx" path="res://generateCreateBoard.gd" id="10_ir8iy"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0hol4"]
+
+[sub_resource type="Gradient" id="Gradient_y32ns"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wtcfe"]
+gradient = SubResource("Gradient_y32ns")
+width = 1920
+height = 1080
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(198, 98)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(962.75, 540.25)
+scale = Vector2(1926.5, 1081.5)
+mesh = SubResource("QuadMesh_0hol4")
+texture = SubResource("GradientTexture2D_wtcfe")
+
+[node name="Info Button" type="StaticBody2D" parent="."]
+position = Vector2(1718, 4)
+input_pickable = true
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Info Button"]
+position = Vector2(99, 49)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="InfoButton" type="Sprite2D" parent="Info Button"]
+position = Vector2(100, 49)
+texture = ExtResource("2_epypp")
+
+[node name="Play Button" type="StaticBody2D" parent="."]
+position = Vector2(10, 7)
+input_pickable = true
+script = ExtResource("3_kdubu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play Button"]
+position = Vector2(99, 49)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="PlayButton" type="Sprite2D" parent="Play Button"]
+position = Vector2(99, 49)
+texture = ExtResource("4_d21ai")
+
+[node name="Info" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(962, 595)
+texture = ExtResource("5_rj586")
+
+[node name="PlayBoard" type="Node2D" parent="."]
+position = Vector2(939, 512)
+script = ExtResource("6_kdubu")
+
+[node name="CBFX" type="SpinBox" parent="."]
+visible = false
+offset_left = 612.0
+offset_top = 944.0
+offset_right = 818.0
+offset_bottom = 1038.0
+max_value = 20.0
+rounded = true
+prefix = "Size X:"
+
+[node name="CBFY" type="SpinBox" parent="."]
+visible = false
+offset_left = 1074.0
+offset_top = 944.0
+offset_right = 1280.0
+offset_bottom = 1038.0
+max_value = 20.0
+rounded = true
+prefix = "Size Y:"
+
+[node name="Create Button" type="StaticBody2D" parent="."]
+position = Vector2(235, 8)
+input_pickable = true
+script = ExtResource("7_rj586")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Create Button"]
+position = Vector2(99, 49)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CreateButton" type="Sprite2D" parent="Create Button"]
+position = Vector2(99, 49)
+texture = ExtResource("7_d21ai")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 388.0
+offset_right = 506.0
+offset_bottom = 396.0
+text = "TESTING BUTTON FOR TESTING"
+script = ExtResource("9_4d7sh")
+
+[node name="CreateBoard" type="Node2D" parent="."]
+position = Vector2(939, 512)
+script = ExtResource("10_ir8iy")
+
+[connection signal="input_event" from="Info Button" to="Info Button" method="_on_input_event"]
+[connection signal="input_event" from="Play Button" to="Play Button" method="_on_input_event"]
+[connection signal="input_event" from="Create Button" to="Create Button" method="_on_input_event"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

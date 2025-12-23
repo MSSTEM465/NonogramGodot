@@ -1,0 +1,54 @@
+extends Label
+
+@onready var PlayBoard = get_node("../../../PlayBoard")
+@onready var location: int
+@onready var ifX: bool
+var theT = []
+var result = ""
+var counter = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	update()
+	pass # Replace with function body.
+
+func update():
+	theT = []
+	if ifX:
+		theT = PlayBoard.arrayPlay[location]
+	else:
+		for row in PlayBoard.arrayPlay:
+			if location >= 0 and location < row.size():
+				theT.append(row[location])
+			else:
+				break
+	var i
+	result = ""
+	counter = 0
+	for h in range(len(theT)):
+		i = theT[h]
+		print("number:",i,"theT:",theT)
+		if i == 1:
+			counter += 1
+			if h+2 > len(theT):
+				if len(result) == 0:
+					result = str(counter)
+				else:
+					result = result + ", " + str(counter)
+		elif counter > 0 and (i == 0 or i == 2):
+			if len(result) == 0:
+				result = str(counter)
+			else:
+				result = result + ", " + str(counter)
+			counter = 0
+	if len(result) == 0:
+		result = "0"
+	if not ifX:
+		result = result.replace(", ","\n")
+	print(result)
+	self.set_text(result)
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

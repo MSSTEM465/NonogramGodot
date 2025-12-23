@@ -101,6 +101,7 @@ position = Vector2(99, 49)
 texture = ExtResource("7_d21ai")
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 498.0
 offset_top = 388.0
 offset_right = 506.0

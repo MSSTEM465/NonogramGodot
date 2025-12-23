@@ -4,6 +4,8 @@ var sprite: Sprite2D
 var x: int
 var y: int
 @onready var CreateBoard = get_node("../../CreateBoard")
+@onready var TIX = CreateBoard.aTerribleIdeaX
+@onready var TIY = CreateBoard.aTerribleIdeaY
 var empty := preload("res://images/empty.png")
 var marked := preload("res://images/marked.png")
 var filled := preload("res://images/filled.png")
@@ -24,5 +26,14 @@ func _on_input_event(viewport, event, shape_idx):
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
 			sprite.texture = marked
 			CreateBoard.array[x][y] = 2
+		for h in TIX:
+			if h.location == x:
+				print(h.location)
+				h.update()
+				#print("huah")
+		for g in TIY:
+			if g.location == y:
+				print("two")
+				g.update()
 	print(CreateBoard.array)
 		

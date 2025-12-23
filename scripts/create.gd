@@ -15,5 +15,10 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		var FX := get_node("../CBFX") as SpinBox
 		var FY := get_node("../CBFY") as SpinBox
+		var PBN := get_node("../PlayBoard") as Node2D
+		var CBN := get_node("../CreateBoard") as Node2D
 		FX.show()
 		FY.show()
+		PBN.hide()
+		CBN.show()
+		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://clpsgko82odrx"]
+[gd_scene load_steps=46 format=3 uid="uid://clpsgko82odrx"]
 
 [ext_resource type="Script" uid="uid://br674xi31r4nq" path="res://scripts/opengame.gd" id="1_wgsso"]
 [ext_resource type="VideoStream" uid="uid://t87u3owpaybk" path="res://videos/nonogrambuttonCompromise.ogv" id="2_0y70q"]
@@ -58,12 +58,21 @@ size = Vector2(198, 95)
 font_size = 28
 font_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_bhvcy"]
+font_names = PackedStringArray("Bahnschrift")
+
 [sub_resource type="LabelSettings" id="LabelSettings_qrn07"]
+font = SubResource("SystemFont_bhvcy")
 font_size = 30
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lidg2"]
+line_spacing = 1.615
 font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i887n"]
+font_size = 20
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SystemFont" id="SystemFont_xcgji"]
@@ -316,10 +325,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 803.5
-offset_top = 353.0
-offset_right = 1116.5
-offset_bottom = 408.0
+offset_left = 804.0
+offset_top = 368.0
+offset_right = 1117.0
+offset_bottom = 423.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Programming and Art"
@@ -335,36 +344,36 @@ text = "Maximillian Siewior"
 label_settings = SubResource("LabelSettings_lidg2")
 
 [node name="Label5" type="Label" parent="Credits"]
-offset_left = 803.5
-offset_top = 507.0
-offset_right = 1116.5
-offset_bottom = 562.0
+offset_left = 548.0
+offset_top = 522.0
+offset_right = 861.0
+offset_bottom = 577.0
 text = "Keyboard Clipart"
 label_settings = SubResource("LabelSettings_qrn07")
 horizontal_alignment = 1
 
 [node name="Label6" type="Label" parent="Credits"]
-offset_left = 733.0
+offset_left = 477.0
 offset_top = 535.0
-offset_right = 1204.0
+offset_right = 948.0
 offset_bottom = 604.0
 text = "techonthenet.com"
 label_settings = SubResource("LabelSettings_lidg2")
 horizontal_alignment = 1
 
 [node name="Label7" type="Label" parent="Credits"]
-offset_left = 803.5
-offset_top = 627.0
-offset_right = 1116.5
-offset_bottom = 682.0
+offset_left = 548.0
+offset_top = 642.0
+offset_right = 861.0
+offset_bottom = 697.0
 text = "Mouse Clipart"
 label_settings = SubResource("LabelSettings_qrn07")
 horizontal_alignment = 1
 
 [node name="Label8" type="Label" parent="Credits"]
-offset_left = 728.0
+offset_left = 472.0
 offset_top = 653.0
-offset_right = 1199.0
+offset_right = 943.0
 offset_bottom = 722.0
 text = "vecteezy.com"
 label_settings = SubResource("LabelSettings_lidg2")
@@ -377,9 +386,9 @@ texture = ExtResource("9_0y70q")
 
 [node name="Label9" type="Label" parent="Credits"]
 offset_left = 563.0
-offset_top = 760.0
+offset_top = 777.0
 offset_right = 876.0
-offset_bottom = 847.0
+offset_bottom = 864.0
 text = "Art done with 
 Affinity Photo"
 label_settings = SubResource("LabelSettings_qrn07")
@@ -396,9 +405,9 @@ texture = ExtResource("14_f0ka0")
 
 [node name="Label10" type="Label" parent="Credits"]
 offset_left = 1066.0
-offset_top = 757.0
+offset_top = 774.0
 offset_right = 1379.0
-offset_bottom = 844.0
+offset_bottom = 861.0
 text = "Videos done with 
 Davinci Resolve"
 label_settings = SubResource("LabelSettings_qrn07")
@@ -413,6 +422,46 @@ texture = ExtResource("15_lqdfc")
 position = Vector2(960, 122)
 scale = Vector2(0.34432718, 0.34432718)
 texture = ExtResource("25_bhvcy")
+
+[node name="Label11" type="Label" parent="Credits"]
+offset_left = 1059.5
+offset_top = 522.0
+offset_right = 1372.5
+offset_bottom = 577.0
+text = "Audio"
+label_settings = SubResource("LabelSettings_qrn07")
+horizontal_alignment = 1
+
+[node name="Label12" type="Label" parent="Credits"]
+offset_left = 980.0
+offset_top = 535.0
+offset_right = 1451.0
+offset_bottom = 604.0
+text = "freesound.org"
+label_settings = SubResource("LabelSettings_lidg2")
+horizontal_alignment = 1
+
+[node name="Label13" type="Label" parent="Credits"]
+offset_left = 1047.0
+offset_top = 603.0
+offset_right = 1246.0
+offset_bottom = 748.0
+text = "qubodup
+cydon
+soundstack
+Breviceps"
+label_settings = SubResource("LabelSettings_i887n")
+
+[node name="Label14" type="Label" parent="Credits"]
+offset_left = 1190.0
+offset_top = 606.0
+offset_right = 1389.0
+offset_bottom = 751.0
+text = "ani_music
+Phorgador
+JellyDaisies"
+label_settings = SubResource("LabelSettings_i887n")
+horizontal_alignment = 2
 
 [node name="GoL" type="Area2D" parent="."]
 position = Vector2(1406, 796)
